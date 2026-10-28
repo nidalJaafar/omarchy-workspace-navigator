@@ -8,6 +8,34 @@ overview.
 The companion `double-super` helper toggles the separately installed
 `omarchy-overview` plugin when the left Super key is tapped twice within 420 ms.
 
+## Installation (Omarchy 4.5)
+
+Install both plugins:
+
+```bash
+omarchy plugin add https://github.com/nidalJaafar/omarchy-overview.git --enable
+omarchy plugin add https://github.com/nidalJaafar/omarchy-workspace-navigator.git --enable
+```
+
+If another overview version is already installed, back it up and remove it
+through Omarchy's plugin manager before installing this fork, since both use
+the same plugin ID.
+
+In `~/.config/omarchy/shell.json`, replace `omarchy.workspaces` in the bar's
+`left` section with `nidal.workspace-navigator`. Keep only one navigator entry
+if enabling the plugin already added it. Add the double-Super binding below
+to `~/.config/hypr/bindings.lua`, then run:
+
+```bash
+hyprctl reload
+hyprctl configerrors
+omarchy restart shell
+```
+
+Hover workspace buttons for window previews. Click a preview to focus a window,
+right-click a workspace for the overview, or double-tap left Super after adding
+the binding.
+
 ## Files installed outside this folder
 
 The local setup replaces `omarchy.workspaces` with
