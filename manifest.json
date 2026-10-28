@@ -1,0 +1,66 @@
+{
+  "schemaVersion": 1,
+  "id": "nidal.workspace-navigator",
+  "name": "Workspace Navigator",
+  "version": "0.4.0",
+  "author": "Nidal",
+  "license": "MIT",
+  "description": "Workspace buttons with live hover previews and an overview shortcut.",
+  "kinds": [
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "barWidget": "Workspaces.qml"
+  },
+  "barWidget": {
+    "displayName": "Workspace Navigator",
+    "description": "See live previews of the windows on each workspace by hovering its button.",
+    "category": "Compositor",
+    "allowMultiple": false,
+    "defaultSection": "left",
+    "defaults": {
+      "minimumWorkspaces": 5,
+      "hoverDelayMs": 220,
+      "closeDelayMs": 180,
+      "maxPopupWindows": 6
+    },
+    "schema": [
+      {
+        "key": "minimumWorkspaces",
+        "type": "integer",
+        "label": "Minimum workspaces",
+        "min": 1,
+        "max": 10,
+        "step": 1,
+        "defaultValue": 5
+      },
+      {
+        "key": "hoverDelayMs",
+        "type": "integer",
+        "label": "Hover delay (ms)",
+        "min": 0,
+        "max": 1000,
+        "step": 20,
+        "defaultValue": 220
+      },
+      {
+        "key": "closeDelayMs",
+        "type": "integer",
+        "label": "Close delay (ms)",
+        "min": 0,
+        "max": 1000,
+        "step": 20,
+        "defaultValue": 180
+      },
+      {
+        "key": "maxPopupWindows",
+        "type": "integer",
+        "label": "Maximum listed windows",
+        "min": 1,
+        "max": 30,
+        "step": 1,
+        "defaultValue": 6
+      }
+    ]
+  }
+}
